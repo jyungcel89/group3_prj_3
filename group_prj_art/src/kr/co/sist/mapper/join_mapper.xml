@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 				 u,placeName,addr,cAPhone,cAName,site,facilities,weekDayStart,
+	weekDayEnd,holyDayStart,holyDayEnd,closeDay,priceInfo,introduction,trafficInfo,mAPhone,mAName,PP
+	,adultPrice,youthPrice,kidsPrice -->			 
+<!--myBatis에선 ''를 붙이지 않는다.  -->
+  <mapper namespace="kr.co.sist.join">
+  	<insert id="memberJoin" parameterType="kr.co.sist.vo.MemberVO">
+		insert into member(id,pass,name,phone,email,birth,gender,addr,addr2,flag)
+		values(#{id},#{pass},#{name},#{phone},#{email},#{birth},#{gender},#{addr},#{addr2},'N')
+	</insert>
+
+
+	  
+  </mapper>

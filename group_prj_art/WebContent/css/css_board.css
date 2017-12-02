@@ -1,0 +1,31 @@
+@CHARSET "UTF-8";
+	/* DIV 설정   */
+	#page_title{
+				background-color:#FFA7A7;
+				margin:0 auto;
+				width: 1182px;
+				height:211px;
+	}	
+	#board_content{
+				/* 
+				padding-left:50px; padding-top:50px;
+				 */
+				background-color:#D1B2FF;
+				margin:0 auto;
+				width: 1182px;
+				height:1000px;
+	}
+	#boardFrm{
+				position: relative;
+				left: 170px; top: 140px;
+				background-color: #EAEAEA;
+				width: 840px;
+				height: 560px;
+	}
+	#searchFrm{
+				position: relative;
+				left: 170px; top: 150px;
+				background-color: #F6F6F6;
+				width: 840px;
+				height: 60px;
+	}

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+  <mapper namespace="kr.co.sist.exhibit">
+  	<!-- 전시회 정보 1개 조회 - exhibit_info -->
+  	<select id="selectOneExhibit" resultType="kr.co.sist.domain.ExhibitInfo" parameterType="int">
+	  	SELECT  	EI.EX_NUM, PI.P_NUM, EI.IMG, EI.TITLE, PI.PLACE_NAME, TO_CHAR(EI.START_DAY,'YYYY.MM.DD') START_DAY, TO_CHAR(EI.END_DAY,'YYYY.MM.DD') END_DAY, EI.FEE_ADULT, EI.FEE_YOUTH, EI.FEE_CHILD
+		FROM		EXHIBIT_INFO EI
+		INNER JOIN 	PLACE_INFO PI
+		ON 			(EI.P_NUM = PI.P_NUM)
+		WHERE		EX_NUM=#{ param.ex_num }
+  	</select>
+  	<!-- 선택된 전시회의 댓글 수 -->
+ 	<select id="selectCommentListCnt" resultType="int" parameterType="int">
+  		SELECT 	COUNT(*) 
+  		FROM	USER_COMMENT
+  		WHERE	EX_NUM=#{ ex_num }
+  	</select>
+  	<!-- 선택된 전시회의 평점 및 댓글 리스트 -->
+	<select id="selectExhibitCmt" resultType="kr.co.sist.domain.ExhibitComment" parameterType="kr.co.sist.domain.ExhibitComment">
+		SELECT  ID, SCORE, COMMENT_DETAIL, TO_CHAR(W_DATE,'YYYY.MM.DD') W_DATE
+		FROM
+				(
+				SELECT 	ROW_NUMBER() OVER (ORDER BY W_DATE DESC) RNUM, ID, SCORE, COMMENT_DETAIL, W_DATE
+				FROM	USER_COMMENT
+				WHERE	EX_NUM=#{ ex_num }
+				) A
+		WHERE 	RNUM BETWEEN #{ startRowNo } AND #{ endRowNo }
+  	</select>
+  	<!-- 선택된 전시회의 평점 및 댓글 추가 -->
+  	<select id="insertUserCmt" resultType="int" parameterType="kr.co.sist.domain.InsertUserComment">
+  		INSERT INTO USER_COMMENT(COMMENT_NUM, COMMENT_DETAIL, SCORE, P_NUM, EX_NUM, ID, W_DATE)
+ 			VALUES(NEXTVAL('seq_ucmt'),#{ comment_detail },#{ score },#{ p_num },#{ ex_num },#{ id },current_timestamp)
+  	</select>
+  	
+ 	<select id="selectExhibitListCnt" resultType="int" parameterType="kr.co.sist.vo.Paging">
+  		SELECT 	COUNT(*) 
+  		FROM	EXHIBIT_INFO
+  		WHERE	1=1
+  		 <!-- searchCondition : 검색조건 / searchValue : 검색어  --> 
+  		<if test="searchCondition != null and searchValue !=''">
+		AND 	${ searchCondition } LIKE '%' || #{ searchValue } || '%'
+  		</if>
+  	</select>
+  	
+  	<select id="selectExhibitList" resultType="kr.co.sist.vo.ExhibitListVO" parameterType="kr.co.sist.vo.Paging">
+		SELECT	EX_NUM, P_NUM, IMG, TITLE, PLACE_NAME, TO_CHAR(START_DAY,'YYYY.MM.DD') START_DAY, TO_CHAR(END_DAY,'YYYY.MM.DD') END_DAY
+		FROM	(
+			  	SELECT  	ROW_NUMBER() OVER (ORDER BY EX_NUM ASC) RNUM, EI.EX_NUM, PI.P_NUM, EI.IMG, EI.TITLE, PI.PLACE_NAME, EI.START_DAY, EI.END_DAY
+				FROM		EXHIBIT_INFO EI
+				INNER JOIN 	PLACE_INFO PI
+				ON 			(EI.P_NUM = PI.P_NUM)
+			  	WHERE		1=1	
+		  		<if test="searchCondition != null and searchValue != '' ">
+				AND 		${ searchCondition } LIKE '%' || #{ searchValue } || '%'
+				</if>
+				) A
+  		WHERE RNUM BETWEEN #{ startRowNo } AND #{ endRowNo }
+  	</select>
+  	
+  	<select id="selectExhibitScore" resultType="String" parameterType="int">
+  		SELECT	SCORE
+  		FROM	USER_COMMENT
+  		WHERE	EX_NUM=#{ param.ex_num }
+  	</select>
+  	
+  	<select id="selectCalendarExhibit" resultType="kr.co.sist.vo.CalExhibitListVO" parameterType="kr.co.sist.vo.CalExhibitListVO">
+		SELECT		RNUM, EX_NUM, P_NUM, IMG, TITLE, PLACE_NAME, TO_CHAR(START_DAY,'YYYY.MM.DD') START_DAY, TO_CHAR(END_DAY,'YYYY.MM.DD') END_DAY
+		FROM		(
+			  		SELECT  	ROW_NUMBER() OVER (ORDER BY START_DAY DESC) RNUM, EI.EX_NUM, PI.P_NUM, EI.IMG, EI.TITLE, PI.PLACE_NAME, EI.START_DAY, EI.END_DAY
+					FROM		EXHIBIT_INFO EI
+					INNER JOIN 	PLACE_INFO PI
+					ON 			(EI.P_NUM = PI.P_NUM)
+					WHERE		START_DAY <![CDATA[<=]]> TO_DATE(#{ selectDate },'YYYY-MM-DD') AND END_DAY <![CDATA[>=]]> TO_DATE(#{ selectDate },'YYYY-MM-DD')
+  					) A
+  		WHERE 		RNUM BETWEEN #{ startRowNo } AND #{ endRowNo }
+  	</select>
+
+ 	<select id="selectCalExhibitListCnt" resultType="int" parameterType="String">
+  		SELECT 	COUNT(*) 
+  		FROM	EXHIBIT_INFO
+		WHERE	START_DAY <![CDATA[<=]]> TO_DATE(#{ selectDate },'YYYY-MM-DD') AND END_DAY <![CDATA[>=]]> TO_DATE(#{ selectDate },'YYYY-MM-DD')
+  	</select>
+  </mapper>  

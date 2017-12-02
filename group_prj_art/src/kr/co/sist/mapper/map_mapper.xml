@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 				 u,placeName,addr,cAPhone,cAName,site,facilities,weekDayStart,
+	weekDayEnd,holyDayStart,holyDayEnd,closeDay,priceInfo,introduction,trafficInfo,mAPhone,mAName,PP
+	,adultPrice,youthPrice,kidsPrice -->			 
+<!--myBatis에선 ''를 붙이지 않는다.  -->
+  <mapper namespace="kr.co.sist.map">
+  	<select id="selectGu" resultType="String">
+			select distinct gu from place_info
+	 </select>
+	  
+	  <select id="selectPlaceInfo" resultType="kr.co.sist.domain.ArtPlaceInfo" parameterType="int">
+	  SELECT 
+	  place_info.place_name,
+	  place_info.addr,
+	  place_info.site,
+	  place_info.latitude,
+	  place_info.longitude,
+	  place_info.holiday,
+	  place_info.gu,
+	  place_info.img,
+	  place_info.week_time,
+	  place_info.weekend_time
+	  FROM place_info 
+	  INNER JOIN seoulartcoords ON seoulartcoords.p_num=place_info.p_num WHERE seoulartcoords.p_num=#{ p_num }
+	  </select>
+	  
+	  <sql id="placeDupSql">select place_name placename,img from place_info where</sql>
+	  
+	  <select id="selectPlaceGu" resultType="kr.co.sist.domain.PlaceList" parameterType="String">
+	  		<include refid="placeDupSql"/>  gu=#{categ}
+	  		
+	  </select>
+	  
+	  <select id="selectPlaceName" resultType="kr.co.sist.domain.PlaceList" parameterType="String">
+	  		<include refid="placeDupSql"/> place_name  like '%'||#{categ}||'%'
+	  </select>
+	   
+	  <select id="selectRegionGu" resultType="Integer" parameterType="String">
+	  		select p_num from place_info WHERE gu =#{categ}
+	  </select>
+	  
+	  <select id="selectRegionName" resultType="Integer" parameterType="String">
+			select p_num from place_info where place_name like '%'||#{categ}||'%'
+	  </select>
+	  
+  </mapper>

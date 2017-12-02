@@ -1,0 +1,313 @@
+/*  회원가입 관력 css*/
+
+/* div#title{height:50px;position:absolute;right:280px;top:150px}
+div#titleLogin{height:50px;position:absolute;right:280px;top:120px} */
+	/* 페이지 타이틀 */
+	#sub_top{
+			   width:1182px;
+			   height:165px;
+			   border-bottom: 1px solid #b4b4b4;
+			   margin:0px auto;
+			   text-align: right;
+	}
+	/* 페이지 타이틀 텍스트 */
+	#sub_top_text{
+		   font-size: 40px;
+		   color:#648730;
+		   position: relative;
+		   top:100px;
+	}
+	#join_content{
+			/* 
+			padding-left:50px; padding-top:50px;
+			 */
+			background-color:#ffffff;
+			margin:0 auto;
+			width: 1182px;
+			height:1000px;
+	}
+	#joinContainer{
+			position:relative; 
+			top:50px; left:250px; 
+			width:650px; height:900px;
+			background-color:#f3f5f5
+	}
+ 	#joinFrm{
+			position: absolute;
+			width:650px; height:900px;
+	}
+
+
+#topDiv{
+	position: absolute;
+	background-color: #ffffff;
+	margin-left: 105px; 
+	margin-top: 60px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+	width: 432px; height: 170px;
+}
+#middleDiv{
+	position: absolute;
+	background-color: #ffffff;
+	margin-left: 105px; 
+	margin-top: 270px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+	width: 432px; height: 210px;
+	display: table;
+	vertical-align: miidle;
+}
+#bottomDiv{
+	position: absolute;
+	background-color: #ffffff;
+	margin-left: 105px; 
+	margin-top: 540px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+	width: 433px; height: 180px;
+}
+#joinBtn{
+	background-color:#84B63D;
+	color:white; font-size:20px;
+	margin-left: 105px; 
+	margin-top: 760px;
+	width:452px; height:70px;
+}
+/*  */
+.topDivInput{
+	margin-bottom: 13px;
+	width: 428px; height: 46px;
+	border: none;
+	border-radius: 8px;
+	font-size: 19px;
+}
+/*  */
+.innerMidDiv{
+	margin-bottom: 10px;
+	padding-top: 4px;
+	padding-bottom: 5px;
+	padding-left: 5px;
+	padding-right: 5px;
+	width: 425px; height: 40px;
+	background-color: #ffffff;
+}
+#mName{
+	width: 419px; height: 32px;
+	border: 1px solid #e9e9e9;
+	font-size: 19px;
+}
+#gender{
+	display: inline-block;
+	width: 420px; height: 40px;
+	border: 1px solid #ffffff;
+}
+.gender_btn{
+	display: table-cell;
+	text-align: center;
+	vertical-align: middle;
+	width: 210px; height: 40px;
+	margin: 0;
+	background-color: #ffffff;
+}
+.radio{
+	visibility: hidden;
+}
+#maleLb{
+	display: table-cell;
+	width: 207px; height: 35px;
+	border: 1px solid #e9e9e9;
+	text-align: center;
+	color: #c0c0c0;
+	vertical-align: middle;
+	padding-left: 30px;
+}
+#femaleLb{
+	display: table-cell;
+	width: 206px; height: 35px;
+	border: 1px solid #e9e9e9;
+	text-align: center;
+	color: #c0c0c0;
+	vertical-align: middle;
+	padding-left: 30px;
+}
+#birthLb{
+	background-color: #ffffff;
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	font-size: 13px;
+	color: #c0c0c0;
+	width: 50px; height: 40px;
+}
+.birthDiv{
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	width: 123px; height: 40px;
+	border: 1px solid #e9e9e9;
+}
+#year{
+	width: 80px; height: 22px;
+	border: none; border-radius: 8px;
+}
+#month{
+	width: 80px; height: 22px;
+	border: none; border-radius: 8px;
+}
+#day{
+	width: 80px; height: 22px;
+	border: none; border-radius: 8px;
+}
+#emailLb{
+	background-color: #fff;
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	font-size: 13px;
+	color: #c0c0c0;
+	width: 50px; height: 40px;
+}
+#emailAddr{
+	display: table-cell;
+	vertical-align: middle;
+	text-align: right;
+	border: 1px solid #ffffff;
+	width: 200px;
+}
+#emailDomain{
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	border: 1px solid #ffffff;
+	width: 120px;
+}
+#emailGol{
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	border: 1px solid #ffffff;
+	width: 50px;
+}
+#email1{
+	width: 150px; height: 22px;
+	border: none; border-radius: 8px;
+}
+#email2{
+	width: 100px; height: 22px;
+	border: none; border-radius: 8px;
+}
+.innerBtmDiv{
+	margin-bottom: 10px;
+	padding-top: 4px;
+	padding-bottom: 5px;
+	padding-left: 5px;
+	padding-right: 5px;
+	width: 425px; height: 40px;
+	background-color: #ffffff;
+}
+#phoneLb{
+	background-color: #ffffff;
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	font-size: 12px;
+	color: #c0c0c0;
+	width: 70px; height: 40px;
+}
+#codeDiv{
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	border: 1px solid #ffffff;
+	width: 90px;
+}
+#code_num{
+	width: 80px; height: 22px;
+	font-size: 16px;
+	border: none; border-radius: 8px;
+}
+#phoneDiv{
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	border: 1px solid #ffffff;
+	width: 260px; height: 40px;
+}
+#phone{
+	width: 250px; height: 24px;
+	font-size: 16px;
+	border: none; border-radius: 8px;
+}
+#addrLb{
+	background-color: #ffffff;
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	font-size: 13px;
+	color: #c0c0c0;
+	width: 70px; height: 40px;
+}
+#addr1Div{
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	border: none;
+	width: 280px;
+}
+#searchAddrBtn{
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	border: 1px solid #c0c0c0;
+	width: 50px;
+}
+#addr1{
+	width: 260px; height: 22px;
+	font-size: 16px;
+	border: none; border-radius: 8px;
+	
+}
+#addrBtn{
+	background-color: #ffffff;
+	border: none;
+	height: 38px;
+}
+#addrDetailLb{
+	background-color: #ffffff;
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	font-size: 13px;
+	color: #c0c0c0;
+	width: 70px; height: 40px;
+}
+#addr2Div{
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	border: 1px solid #ffffff;
+	width: 350px;
+}
+#addr2{
+	width: 330px; height: 22px;
+	font-size: 16px;
+	border: none; border-radius: 8px;
+	
+}
+
+/* label#textTitle{float:right;color:#375010;font-size:40px}	 */
+#under{width:1150px;text-align:left;}	
+#underLogin{width:1000px;text-align:left;}	
+#loginMenu{position:absolute; top:35%; left:25%; width:650px; height:425px; background-image:url("http://211.63.89.149:8080/group_prj_art2_BackUP/common/images/login_img/login_bg.jpg"); margin:-50px 0 0 -50px; }
+#searchMenu{position:absolute; top:35%; left:15%; width:650px; height:325px; border:1px solid #000;}
+
+#titleSearch{height:50px;position:absolute;right:250px;top:100px;}	
+#searchTitle{float:right;color:#375010;font-size:30px}
+#underSearch{width:700px;text-align:left;}

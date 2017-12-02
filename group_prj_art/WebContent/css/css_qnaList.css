@@ -1,0 +1,62 @@
+@CHARSET "UTF-8";
+#sub_top{
+	width:1182px;
+	height:165px;
+	border-bottom: 1px solid #b4b4b4;
+	margin:0px auto;
+	text-align: right;
+}
+#sub_top_text{
+	font-size: 40px;
+	color:#648730;
+	position: relative;
+	top:100px;
+}
+#qna_body{
+	width:1182px;
+	height:830px;
+	margin:0px auto; 
+}
+#write_btn{
+    width: 95px;
+    height: 36px;
+    position: relative;
+    top: 60px;
+    left: 941px;
+    border:1px solid #000;
+    background-color:#fff;
+    outline: 0px;
+    
+}
+/* table setting */
+#body_tab{ 
+	width: 880px;   
+ 	position: relative;
+    top: 80px;
+    left: 160px;
+    border-spacing: 0px;
+        text-align: center;
+}
+    
+.list_th{
+	color:#616161;    
+	background-color: #e9e9e9;
+	border-top: 4px solid #86af49;
+}
+#td_num{
+	width:80px;
+}
+#td_writer{
+	width:140px;
+}
+#td_title{
+	width:550px;
+}
+#w_date{
+	width:110px;
+}
+.qna_td{
+	border-bottom: 1px solid #c2c2c2;
+}
+
+

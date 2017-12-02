@@ -1,0 +1,378 @@
+@CHARSET "UTF-8";
+	/* DIV 설정   */
+	/* 페이지 타이틀 */
+	#sub_top{
+			   width:1182px;
+			   height:165px;
+			   border-bottom: 1px solid #b4b4b4;
+			   margin:0px auto;
+			   text-align: right;
+	}
+	/* 페이지 타이틀 텍스트 */
+	#sub_top_text{
+			   font-size: 40px;
+			   color:#648730;
+			   position: relative;
+			   top:100px;
+	}
+	#exhibit_content{
+				/* 
+				padding-left:50px; padding-top:50px;
+				 */
+				background-color:#ffffff;
+				margin:0 auto;
+				width: 1182px;
+				height:1000px;
+	}
+	.exhibit_btn:active{
+				background-color: #528704;
+	}
+	/* 전시 일정 조회 - 캘린더 버튼, 리스트 버튼 */
+	#btn_cal{
+				border: 3px solid #528704;
+				outline: 0px;
+				background-color: #fff;
+				color: #528704;
+				width: 170px;
+				height: 60px;
+				position: relative;
+				font-size: 20px;
+				font-weight: bold;
+	}
+	#btn_list{
+				border: 3px solid #528704;
+				outline: 0px;
+				background-color: #fff;
+				color: #528704;
+				width: 170px;
+				height: 60px;
+				position: relative;
+				left: 30px;
+				font-size: 20px;
+				font-weight: bold;
+	}
+	
+	/* ----------------exhibit_list.jsp------------------ */	
+	/* 전시 일정 조회 버튼 div */
+	#exhibit_btn{
+				position:relative; 
+				left:120px; top:30px;				
+				background-color:#ffffff;
+				width:360px;
+				height:60px;
+	}
+	/* 전시 일정 조회 - 리스트 div, table, tr, li, title */
+	#exhibitListFrm{
+				position:relative;
+				left: 300px; top: 60px;
+				background-color: #ffffff;
+				width: 600px;
+				height: 750px;
+	}
+	#exList_tab {
+			    width: 600px;
+			    position: relative;
+			    top: 10px;
+	}
+	.exList_tr{
+		height: 123px;
+	}
+	.exList_li{
+		list-style: none;
+	}
+	#exList_title{
+				font-weight: bold;
+				font-size: 23px;
+	}
+	
+	/* -------------------- paging exhibitList -------------------- */
+	/* paging div */
+	#paging{
+				position: relative;
+				left: 300px; top: 80px;
+				background-color: #ffffff;
+				width: 600px;
+				height: 80px;
+				text-align: center;
+	}
+	#selected_page{
+				font-weight: bold;
+				font-size: 20px;
+	}
+	#search{
+				position: absolute;
+				padding-top: 14px;
+				top: 20px;
+				width: 600px;
+	}
+	#search_title{
+				width: 90px;
+				height: 30px;
+				text-align: center;
+				font-size: 15px;
+	}
+	#search_word{
+				width: 200px;
+				height: 24px;
+				font-size: 15px;
+	}
+	#search_btn{
+				border: 2px solid #528704;
+				outline: 0px;
+				background-color: #fff;
+				color: #528704;
+				width: 60px;
+				height: 29px;
+				font-size: 15px;
+	}
+
+	/* -----------------exhibit_info.jsp---------------- */
+	#exhibitInfoFrm{
+				position:relative;
+				left: 50px; top: 20px;
+				background-color: #ffffff;
+				width: 1080px;
+				height: 850px;
+	}
+	#ex_img{
+				position: absolute;
+				left: 10px; top: 10px;
+				background-color: #ffffff;
+				width: 550px;
+				height: 350px;
+				display: table-cell;
+				text-align: center;
+	}
+	#ex_inner1{
+				position: absolute;
+				left: 600px; top: 10px;
+				background-color: #ffffff;
+				width: 470px;
+				height: 350px;
+	}
+	#ex_inner_score{
+				position: absolute;
+				left: 10px; top:10px;
+				background: #ffffff;
+				width: 450px;
+				height: 60px;
+	}
+	#ex_score_title{
+				position: absolute;
+				left: 50px; top: 18px;
+				background-color: #ffffff;
+				width: 130px;
+				height: 30px;
+				text-align: center;
+				font-size: 21px;
+				font-weight: bold;
+	}
+	#ex_score_avg{
+				position: absolute;
+				left: 260px; top: 16px;
+				background-color: #ffffff;
+				width: 200px;
+				height: 30px;
+				text-align: center;
+				font-size: 23px;
+				font-weight: bold;
+	}
+	#ex_inner_info_detail{
+				position: absolute;
+				left: 10px; top:80px;
+				background: #ffffff;
+				width: 450px;
+				height: 210px;
+	}
+	#exInfo_tab{
+	}
+	.exInfo_tab_cate{
+				text-align: center;
+				color: #c0c0c0;
+				font-size: 18px;
+				font-weight: bold;
+				width: 60px;
+				
+	}
+	.exInfo_tab_info{
+				font-size: 17px;
+	}
+	#ex_inner_map_btn{
+				position: absolute;
+				left: 380px; top:305px;
+				background: #F6F6F6;
+				width: 80px;
+				height: 40px;
+	}
+	#map_btn{
+			border: 0px;
+			background-color: #ffffff;
+			width: 80px;
+			height: 40px;
+	}
+	/* ex_inner2
+		아이디 | 평점 (라디오) | 댓글작성 (인풋-텍스트) | 댓글등록 (버튼)
+	 */
+	#ex_inner2{
+				position: absolute;
+				left: 10px; top: 400px;
+				background-color: #EAEAEA;
+				width: 1060px;
+				height: 100px;
+	}
+	#ex_inner2_id{
+				position: absolute;
+				left: 10px; top: 10px;
+				background-color: #F6F6F6;
+				width: 150px;
+				height: 80px;
+				display: table;
+	}
+	#ex_id{
+				display: table-cell;
+				text-align: center;
+				vertical-align: middle;
+				font-weight: bold;
+	}
+	#ex_inner2_score{
+				position: absolute;
+				left: 170px; top: 10px;
+				background-color: #F6F6F6;
+				width: 170px;
+				height: 80px;
+	}
+	#ex_score{
+				padding: 13px;
+	}
+	#ex_score_tr_star{
+				font-size: 23px;
+				text-align: center;
+	}
+	#ex_score_tr_radio{
+				text-align: center;
+	}
+	
+	#ex_inner2_cmt{
+				position: absolute;
+				left: 360px; top: 10px;
+				background-color: #F6F6F6;
+				width: 570px;
+				height: 80px;
+	}
+/* 	#ex_inner2_cmt label{
+				position: absolute;
+				top: 1px; left: 1px;
+				padding: 30px 20px 0px;
+				color: #999;
+				cursor: text;
+	} */
+	#tf_cmt{
+				font-size: 20px;
+				height: auto;
+				line-height: normal;
+				
+	}
+	#ex_inner2_btn{
+				position: absolute;
+				left: 950px; top: 10px;
+				background-color: #F6F6F6;
+				width: 100px;
+				height: 80px;
+	}
+	#submit_comment{
+				border: 2px solid #73a727;
+				outline: 0px;
+				background-color: #73a727;
+				color: #fff;
+				width: 100px;
+				height: 80px;
+	}
+	
+	#exInfo_tab{
+				width: 450px;
+				height: 210px;
+	}
+	#ex_score{
+				width: 170px;
+				height: 80px;
+	}
+	#tf_cmt{
+				width: 570px;
+				height: 80px;
+	}
+	
+	/*  */
+	#ex_inner3{
+				position: absolute;
+				left: 10px; top: 530px;
+				background-color: #EAEAEA;
+				width: 1060px;
+				height: 330px;
+	}
+	
+	#cmt_tab{
+			    width: 1060px;
+			    position: relative;
+			    text-align: center;
+	}
+	#cmt_tab tr{
+				height: 51px;
+	}
+	
+	#list_cmt_id{
+				100px;
+	}
+	#list_cmt_score{
+				50px;
+	}
+	#list_cmt_comment{
+				500px;				
+	}
+	#list_cmt_date{
+				300px;
+	}
+	#list_th_id{
+				100px;
+	}
+	#list_th_score{
+				50px;
+	}
+	#list_th_comment{
+				500px;				
+	}
+	#list_th_date{
+				300px;
+	}
+	
+	.list_th{
+				color:#616161;    
+				background-color: #ffffff;
+				border-top: 4px solid #86af49;
+	}
+	
+	/* -------------------- paging exhibitinfo -------------------- */
+	/* paging div */
+	#paging_cmt{
+				position: relative;
+				left: 300px; top: 50px;
+				background-color: #ffffff;
+				width: 600px;
+				height: 80px;
+				text-align: center;
+	}
+	#selected_page{
+				font-weight: bold;
+				font-size: 20px;
+	}
+	
+	
+	/* -------------------exhibit_calendar-------------------- */
+	#exhibitCalFrm{
+				position:relative;
+				left: 110px; top: 100px;
+				background-color: #ffffff;
+				width: 955px;
+				height: 750px;
+	}
+	
+	/* DIV 설정 끝   */	

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xmlns:context="http://www.springframework.org/schema/context"
+   xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+      http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+      http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+   
+   <!-- Root Context: defines shared resources visible to all other web components -->
+   <!-- 1.DB연동 DataSource 설정 -->
+   
+   <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+      <property name="driverClassName" value="org.postgresql.Driver"/>
+      <property name="url" value="jdbc:postgresql://127.0.0.1:5432/postgis_23_choi"/>
+      <property name="username" value="postgres"/>
+      <property name="password" value="gis"/>
+   </bean>
+   
+   <!-- 2.Spring MyBatis Builder : 생성 의존성 주입 :  SqlSessionFactoryBean에 dataSource의존성 주입  -->
+   <bean id="ssfb" class="org.mybatis.spring.SqlSessionFactoryBean">
+      <property name="dataSource" ref="dataSource"/>
+      <property name="configLocation" value="/WEB-INF/spring/mybatis/mybatis_config.xml"/>
+   </bean>
+   <!-- 3.Mybatis Handler 생성 의존성 주입 
+      SqlSessionTemplate에 SqlSessionFactoryBean을 의존성 주입   -->
+   <bean id="sst" class="org.mybatis.spring.SqlSessionTemplate">
+      <constructor-arg ref="ssfb"/>
+   </bean>
+      
+   <context:annotation-config/>
+      <context:component-scan base-package="kr.co.sist.dao"/>
+      <context:component-scan base-package="kr.co.sist.dao.*"/>
+      <context:component-scan base-package="kr.co.sist.service"/>
+      <context:component-scan base-package="kr.co.sist.service.*"/>
+</beans>

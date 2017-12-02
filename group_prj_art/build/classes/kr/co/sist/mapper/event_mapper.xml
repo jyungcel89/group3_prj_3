@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+  <mapper namespace="kr.co.sist.event">
+  
+  	<select id="evnetSelect" resultType="kr.co.sist.domain.EventSelectList" parameterType="kr.co.sist.domain.EventSelectList">
+  		SELECT 	NUM, EVENT_NUM, TITLE, TO_CHAR(EVENT_START,'YYYY.MM.DD') EVENT_START, TO_CHAR(EVENT_END,'YYYY.MM.DD') EVENT_END
+		FROM 	(
+				SELECT 	ROW_NUMBER() OVER(ORDER BY EVENT_START DESC) NUM, EVENT_NUM, TITLE, EVENT_START, EVENT_END
+				FROM 	EVENT
+				) A
+		WHERE 	NUM BETWEEN #{ startRowNo } AND #{ endRowNo }
+  	</select>
+
+  	<select id="selectEventCnt" resultType="int">
+  		SELECT 	COUNT(*)
+  		FROM	EVENT
+  	</select>
+
+	<select id="eventRead" resultType="kr.co.sist.domain.EventReadList">
+  		SELECT 	TITLE, TO_CHAR(EVENT_START,'YYYY.MM.DD') EVENT_START, TO_CHAR(EVENT_END,'YYYY.MM.DD') EVENT_END, CONTENT
+		FROM 	EVENT
+		WHERE 	EVENT_NUM=#{event_num}
+  	</select>
+
+  </mapper>

@@ -1,0 +1,98 @@
+@CHARSET "UTF-8";
+	/* div 설정 - inc세팅  */
+	
+	body{min-width:1420px; min-height:1300px; }
+	#menu_inc{  width:273px; height:1200px;  float: left; position: fixed;	border: 1px solid;border-color:#b4b4b4;border-top-style : none;border-bottom-style : none;border-left-style : none;}
+	#wrap_content{ width:75%;  height:1300px; float : left;  position:relative; left:273px;} 
+	#main_content{ background-color: red; width:1182px; height:1300px; margin: 0px auto; } 
+	/* div 설정 - inc세팅  */
+	/*  inc세팅  */
+	
+	#logo{
+				float:left;
+				background : #FFFFFF ;
+				width: 238px;
+				height: 211px ;	}
+	#logoin{
+				float:left;
+				text-align:center;
+				width: 238px;
+				 height: 138px;
+				 font-family: HYGothic-Medium;
+				 font-size: 8pt;
+				 }
+	#menu{
+				float:left;
+				width: 237px;
+				height: 946px;}	
+					
+	#footer{
+			border: 1px solid;
+			border-color:#b4b4b4;
+			border-right-style : none;
+			border-bottom-style : none;
+			border-left-style : none;
+			width:1182px;
+			height: 126px;
+			margin:0 auto;
+			text-align: center;
+   	}    
+			   
+/* DIV 설정 끝   */
+
+/* 로그인 영역 설정  */
+	#btn_login{
+				  margin-top:33px;
+				  margin-bottom:10px;
+				  background-image : url("http://127.0.0.1:8080/group_prj_art/common/images/main_img/btn_login.jpg");
+				  width :87px;
+				  height: 40px;
+				  
+				  
+	}	
+	#btn_signin{
+				  margin-top:33px;
+				  margin-bottom:10px;
+				  background-image : url("http://127.0.0.1:8080/group_prj_art/common/images/main_img/btn_signin.jpg");
+				 width :87px;
+				  height: 40px;
+	}	
+		
+	#span_find{
+				  float: right;
+				  margin-right:31px; 
+				  color:black;
+				  
+	}	
+	a {text-decoration: none;}
+	a:link {text-decoration: none; color: #939393;}
+
+	/* 로그인 영역 설정  */
+	
+	
+	/* 메뉴 설정   */
+	
+	ul{
+		list-style:none;
+ 		padding-left:0px;
+ 		padding-top:0px;
+  		float: left;
+	}
+  		
+	.hide{
+			width:196px;
+			background-color: #f0f0f0;
+			margin-left:22px;
+	}
+	.sub_li{
+			margin : 5px 0px 10px 37px;
+	}
+    .menu a{cursor:pointer;}
+    .menu .hide{display:none;}
+	/* 메뉴 설정   */
+	
+	/*  inc세팅  */
+	
+
+
+	

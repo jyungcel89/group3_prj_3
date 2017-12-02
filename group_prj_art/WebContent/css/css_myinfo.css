@@ -1,0 +1,121 @@
+@CHARSET "UTF-8";
+/* top css */
+#sub_top{
+	width:1182px;
+	height:165px;
+	border-bottom: 1px solid #b4b4b4;
+	margin:0px auto;
+	text-align: right;
+}
+#sub_top_text{
+	font-size: 40px;
+	color:#648730;
+	position: relative;
+	top:100px;
+}
+/* top css */
+/* body css */
+#my_body{
+	width:1182px;
+	height:830px;
+	margin:0px auto; 
+}
+.myinfo{
+	width:651px;
+	height: 187px;
+	background-image : url("http://127.0.0.1:8080/group_prj_art/common/images/myPage_img/mypage_bg.jpg");
+	margin: 0px auto;
+}
+#div1{
+	position: relative; top:80px;
+}
+#div2{
+	position: relative; top:120px;
+}
+#div3{
+	position: relative; top:160px;
+}
+#sub_body_name{
+	font-size: 15pt;
+	font-weight:bold;
+	color:#292929;
+	position: relative;
+	top:-105px;
+	left:20px;   
+}
+#sub_body_coupon{
+	font-size: 15pt;
+	font-weight:bold;
+	color:#292929;
+	position: relative;
+	top:15px;
+	left:20px;   
+}
+#sub_body_wlist{
+	font-size: 15pt;
+	font-weight:bold;
+	color:#292929;
+	position: relative;
+	top:20px;
+	left:20px;   
+}
+
+#update_btn{
+    width: 60px;
+    height: 30px;
+    position: relative;
+    top: -70px;
+    left: -51px;
+}
+#event_btn{
+    width: 70px;
+    height: 30px;
+    position: relative;
+    top: 50px;
+    left: -24px;
+}
+#more_btn{
+    width: 60px;
+    height: 30px;
+    position: relative;
+    top: 58px;
+    left: -44px;
+}
+#profile_img{
+    width: 146px;
+    height: 146px;
+    position: relative;
+    top: 21px;
+    left: 83px;
+}
+
+#sub_info_name{
+    font-size: 13pt;
+    font-weight: bold;
+    color: #292929;
+    position: relative;
+    top: -38px;
+    left: 160px;
+}
+#sub_event_cnt{
+	font-size: 14pt;
+    font-weight: bold;
+    color: #292929;
+    position: relative;
+    top: 73px;
+    left: 175px;
+}
+#wlist{
+    width: 408px;
+    height: 149px;
+    position: relative;
+    top: -14px;
+    left: 195px;
+    padding-top: 1px;
+}
+#wist_table{
+	width: 405px;
+	border-spacing:9px;
+}
+/* body css */
+

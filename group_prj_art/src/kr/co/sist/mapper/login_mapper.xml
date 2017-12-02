@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 				 u,placeName,addr,cAPhone,cAName,site,facilities,weekDayStart,
+	weekDayEnd,holyDayStart,holyDayEnd,closeDay,priceInfo,introduction,trafficInfo,mAPhone,mAName,PP
+	,adultPrice,youthPrice,kidsPrice -->			 
+<!--myBatis에선 ''를 붙이지 않는다.  -->
+  <mapper namespace="kr.co.sist.login">
+	  <select id="loginSuccess" parameterType="kr.co.sist.vo.LoginParamVO" resultType="String">
+			 select name from member where id=#{id} and pass=#{pass}
+	  </select>
+	  
+	  <select id="searchID" parameterType="kr.co.sist.vo.SearchIdParamVO" resultType="String">
+			 select id from member where name=#{name} and phone=#{phone} and birth=#{birth}
+	  </select>
+	  <select id="searchPass" parameterType="kr.co.sist.vo.SearchPassParamVO" resultType="String">
+			 select email from member where id=#{id} and birth=#{birth} and email=#{email}
+	  </select>
+  </mapper>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+  <mapper namespace="kr.co.sist.main">
+	<!--  메인 공지사항 리스트 -->
+  	<select id="mainSelectNotice" resultType="kr.co.sist.domain.MainNoticeList">
+  		SELECT 	RNUM, NOTICE_NUM, TITLE
+  		FROM	(
+  				SELECT ROW_NUMBER() OVER (ORDER BY W_DATE DESC)AS RNUM, *
+  				FROM NOTICE  
+  				) A
+  		WHERE 	RNUM BETWEEN 1 AND 5;
+  	</select>
+
+  	<select id="mainSelectEvent" resultType="kr.co.sist.domain.MainEventList">
+		SELECT 	RNUM, EVENT_NUM,TITLE
+		FROM	(
+				SELECT ROW_NUMBER() OVER (ORDER BY EVENT_START DESC)AS RNUM, *
+				FROM EVENT  
+				) A
+		WHERE 	RNUM BETWEEN 1 AND 5;
+  	</select>
+  	
+  	<select id="mainSelectExInfo" resultType="kr.co.sist.domain.MainExInfoList">
+		SELECT 	RNUM,P_NUM, EX_NUM, TITLE, PLACE_NAME, START_DAY, END_DAY
+		FROM 	(
+				SELECT 	ROW_NUMBER() OVER(ORDER BY START_DAY DESC) RNUM,EI.P_NUM, EI.EX_NUM, EI.TITLE, PI.PLACE_NAME, EI.START_DAY, EI.END_DAY
+				FROM	EXHIBIT_INFO EI
+				INNER 	JOIN PLACE_INFO PI
+				ON 		(EI.P_NUM=PI.P_NUM)
+				WHERE	START_DAY <![CDATA[<=]]> current_timestamp AND END_DAY <![CDATA[>=]]> current_timestamp
+				)A
+		WHERE 	RNUM BETWEEN 1 AND 4;
+  	</select>
+
+  </mapper>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+  <mappers>
+    <mapper resource="kr/co/sist/mapper/main_mapper.xml"/>
+   
+  	<mapper resource="kr/co/sist/mapper/exhibit_mapper.xml"/>
+  	 
+  	<mapper resource="kr/co/sist/mapper/login_mapper.xml"/> 
+    <mapper resource="kr/co/sist/mapper/map_mapper.xml"/>
+    <mapper resource="kr/co/sist/mapper/join_mapper.xml"/>
+        
+	<mapper resource="kr/co/sist/mapper/qna_mapper.xml"/>
+    <mapper resource="kr/co/sist/mapper/notice_mapper.xml"/>
+    <mapper resource="kr/co/sist/mapper/event_mapper.xml"/>
+
+</mappers>
+</configuration>
