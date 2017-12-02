@@ -21,7 +21,7 @@ import kr.co.sist.service.ExhibitService;
 import kr.co.sist.vo.CalExhibitListVO;
 import kr.co.sist.vo.ExhibitListVO;
 import kr.co.sist.vo.Paging;
-
+//2017-12-02 git update
 @Controller
 @SessionAttributes("id")
 public class ExhibitController {
